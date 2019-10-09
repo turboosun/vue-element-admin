@@ -79,7 +79,7 @@ export const constantRoutes = [
         path: 'dashboard',
         component: () => import('@/views/dashboard/index'),
         name: 'Dashboard',
-        meta: { title: 'Dashboard', icon: 'dashboard', affix: true }
+        meta: { title: '首页', icon: 'dashboard', affix: true }
       }
     ]
   },
@@ -91,7 +91,7 @@ export const constantRoutes = [
         path: 'index',
         component: () => import('@/views/documentation/index'),
         name: 'Documentation',
-        meta: { title: 'Documentation', icon: 'documentation', affix: true }
+        meta: { title: '文档', icon: 'documentation', affix: true }
       }
     ]
   },
@@ -179,7 +179,7 @@ export const asyncRoutes = [
         path: 'index',
         component: () => import('@/views/icons/index'),
         name: 'Icons',
-        meta: { title: 'Icons', icon: 'icon', noCache: true }
+        meta: { title: '图标库', icon: 'icon', noCache: true }
       }
     ]
   },
@@ -268,7 +268,7 @@ export const asyncRoutes = [
         path: 'log',
         component: () => import('@/views/error-log/index'),
         name: 'ErrorLog',
-        meta: { title: 'Error Log', icon: 'bug' }
+        meta: { title: '错误信息', icon: 'bug' }
       }
     ]
   },

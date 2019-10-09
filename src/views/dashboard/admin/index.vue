@@ -1,9 +1,28 @@
 <template>
   <div class="dashboard-editor-container">
     <github-corner class="github-corner" />
-
-    <panel-group @handleSetLineChartData="handleSetLineChartData" />
-
+    <el-row :gutter="12">
+      <el-col :xs="24" :sm="24" :lg="12">
+        <div class="chart-wrapper">
+          <panel-group @handleSetLineChartData="handleSetLineChartData" />
+        </div>
+      </el-col>
+      <el-col :xs="24" :sm="24" :lg="12">
+        <div class="chart-wrapper">
+          <div class="zhu-title">柱状图表</div>
+          <bar-chart />
+        </div>
+      </el-col>
+    </el-row>
+    <el-row style="background:#fff;padding:16px 16px 0;margin-bottom:32px;">
+      <div>
+        <el-col :xs="24" :sm="24" :lg="12"> <div class="text-left-title">模板库</div></el-col>
+        <el-col :xs="24" :sm="24" :lg="12"><div class="text-left-add">查看全部</div></el-col>
+      </div>
+      <div class="chart-wrapper">
+        <TemplateComponent />
+      </div>
+    </el-row>
     <el-row style="background:#fff;padding:16px 16px 0;margin-bottom:32px;">
       <line-chart :chart-data="lineChartData" />
     </el-row>
@@ -42,6 +61,7 @@
 
 <script>
 import GithubCorner from '@/components/GithubCorner'
+import TemplateComponent from './components/TemplateComponent'
 import PanelGroup from './components/PanelGroup'
 import LineChart from './components/LineChart'
 import RaddarChart from './components/RaddarChart'
@@ -75,6 +95,7 @@ export default {
   components: {
     GithubCorner,
     PanelGroup,
+    TemplateComponent,
     LineChart,
     RaddarChart,
     PieChart,
@@ -101,7 +122,19 @@ export default {
   padding: 32px;
   background-color: rgb(240, 242, 245);
   position: relative;
-
+  .text-left-title{
+    text-align: left;
+    font-size: 18px;
+    color: #303133;
+  }
+  .text-right-add{
+    text-align: right;
+  }
+.zhu-title{
+  font-size: 18px;
+  color: #303133;
+  margin-bottom: 20px;
+}
   .github-corner {
     position: absolute;
     top: 0px;
